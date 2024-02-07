@@ -7,6 +7,7 @@
 - [Data preprocessing and association rules](#data-preprocessing-and-association-rules)
 - [Supervised learning](#supervised-learning)
 - [Unsupervised learning](#unsupervised-learning)
+- [How to install](#how-to-install)
 
 ## Overview
 
@@ -36,3 +37,10 @@ The second part of the project is about supervised learning. The goal of this pa
 
 The third part of the project is about unsupervised learning. The goal of this part is to cluster the data into groups based on the values of the variables. The unsupervised learning algorithms used in this part are K-Means, DBSCAN,
 The performance of the models is evaluated using the silhouette score.
+
+## How to install
+
+1. Install the required dependencies: `pip install -r requirements.txt`
+2. run the command ` streamlit run interface.py`
+
+The app will run on `http://localhost:8501/`
