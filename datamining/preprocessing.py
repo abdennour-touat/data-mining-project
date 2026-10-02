@@ -33,7 +33,7 @@ def filter_data(data: pd.DataFrame):
     """
     for col in data.columns:
         data_to_numeric = pd.to_numeric(data[col], errors="coerce")
-        data[col] = data_to_numeric.fillna(data_to_numeric.mean())
+        data[col] = data_to_numeric.fillna(data_to_numeric.mean()).astype(float)
     return data
 
 
@@ -288,6 +288,9 @@ def replace_missing_values_all(data, labels, missing_data):
     """
     new_data = data
     for key in data.keys():
+        # Non-numeric entries are the "missing" ones: coerce so the column can
+        # hold the predicted floats.
+        new_data[key] = pd.to_numeric(new_data[key], errors="coerce").astype(float)
         if len(missing_data[key]) > 0:
             x = 0
             for i in missing_data[key]:
